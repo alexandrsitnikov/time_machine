@@ -32,7 +32,7 @@ class SteppedPatternBuilder<TResult, TBucket extends ParseBucket<TResult>> {
 
   // #Hack: this accommodates IPostPatternParseFormatAction
   // final List<Object> _formatActions = <Object>[];
-  final List<Function(TResult, StringBuffer)> _formatActions = new List<Function(TResult, StringBuffer)>();
+  final List<Function(TResult, StringBuffer)> _formatActions = <Function(TResult, StringBuffer)>[];
   final List<ParseAction<TResult, TBucket>> _parseActions = <ParseAction<TResult, TBucket>>[];
   final TBucket Function() _bucketProvider;
   PatternFields _usedFields = PatternFields.none;
