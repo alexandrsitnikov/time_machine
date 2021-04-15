@@ -93,7 +93,7 @@ abstract class DatePatternHelper {
           // Hack: see below
           // Dart Hack: we don't have a Delegate.Action in Dart
           //  So instead of, 'formatAction.Target as IPostPatternParseFormatAction' we perform type erasure
-          builder.addPostPatternParseFormatAction(_MonthFormatActionHolder<TResult, TBucket>(format, count, numberGetter));
+          // builder.addPostPatternParseFormatAction(_MonthFormatActionHolder<TResult, TBucket>(format, count, numberGetter));
           break;
         default:
           throw StateError('Invalid count!');
