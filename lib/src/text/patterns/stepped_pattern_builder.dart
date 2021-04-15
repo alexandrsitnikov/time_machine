@@ -31,8 +31,8 @@ class SteppedPatternBuilder<TResult, TBucket extends ParseBucket<TResult>> {
   static const int _ZCodeUnit = 90;
 
   // #Hack: this accommodates IPostPatternParseFormatAction
-  final List<Object> _formatActions = <Object?>[];
-  // final List<Function(TResult, StringBuffer)> _formatActions = new List<Function(TResult, StringBuffer)>();
+  // final List<Object> _formatActions = <Object>[];
+  final List<Function(TResult, StringBuffer)> _formatActions = new List<Function(TResult, StringBuffer)>();
   final List<ParseAction<TResult, TBucket>> _parseActions = <ParseAction<TResult, TBucket>>[];
   final TBucket Function() _bucketProvider;
   PatternFields _usedFields = PatternFields.none;
@@ -141,7 +141,7 @@ class SteppedPatternBuilder<TResult, TBucket extends ParseBucket<TResult>> {
 
   void addFormatAction(Function(TResult, StringBuffer) formatAction) => _formatActions.add(formatAction);
 
-  void addPostPatternParseFormatAction(IPostPatternParseFormatAction formatAction) => _formatActions.add(formatAction);
+  // void addPostPatternParseFormatAction(IPostPatternParseFormatAction formatAction) => .add(formatAction);
 
   /// Equivalent of [addParseValueAction] but for 64-bit integers. Currently only
   /// positive values are supported.
